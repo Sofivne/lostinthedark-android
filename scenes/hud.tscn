@@ -1,0 +1,152 @@
+[gd_scene load_steps=21 format=3 uid="uid://1rf2m6xmepd3"]
+
+[ext_resource type="Texture2D" uid="uid://indy134vfq6e" path="res://assets/sprites/heart_animated_2.png" id="1_2w0sh"]
+[ext_resource type="Texture2D" uid="uid://dx5qyy4q4p3li" path="res://assets/sprites/life.png" id="2_oo0fn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3sfrc"]
+atlas = ExtResource("1_2w0sh")
+region = Rect2(0, 0, 17, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7y72"]
+atlas = ExtResource("1_2w0sh")
+region = Rect2(17, 0, 17, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxbfr"]
+atlas = ExtResource("1_2w0sh")
+region = Rect2(34, 0, 17, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5216"]
+atlas = ExtResource("1_2w0sh")
+region = Rect2(51, 0, 17, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbbo2"]
+atlas = ExtResource("1_2w0sh")
+region = Rect2(68, 0, 17, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2n73a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3sfrc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7y72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxbfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5216")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbbo2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ysmq"]
+atlas = ExtResource("2_oo0fn")
+region = Rect2(0, 0, 900, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fi6k"]
+atlas = ExtResource("2_oo0fn")
+region = Rect2(900, 0, 900, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uo2fv"]
+atlas = ExtResource("2_oo0fn")
+region = Rect2(1800, 0, 900, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_047uy"]
+atlas = ExtResource("2_oo0fn")
+region = Rect2(2700, 0, 900, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pdws"]
+atlas = ExtResource("2_oo0fn")
+region = Rect2(3600, 0, 900, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hd3ao"]
+atlas = ExtResource("2_oo0fn")
+region = Rect2(4500, 0, 900, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0i1j5"]
+atlas = ExtResource("2_oo0fn")
+region = Rect2(5400, 0, 900, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mphia"]
+atlas = ExtResource("2_oo0fn")
+region = Rect2(6300, 0, 900, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0m4u7"]
+atlas = ExtResource("2_oo0fn")
+region = Rect2(7200, 0, 900, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apjy4"]
+atlas = ExtResource("2_oo0fn")
+region = Rect2(8100, 0, 900, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5n1hp"]
+atlas = ExtResource("2_oo0fn")
+region = Rect2(9000, 0, 900, 70)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eld54"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ysmq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fi6k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uo2fv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_047uy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pdws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hd3ao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0i1j5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mphia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0m4u7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apjy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5n1hp")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Heart" type="AnimatedSprite2D" parent="."]
+position = Vector2(48, 48)
+scale = Vector2(2.85294, 2.85294)
+sprite_frames = SubResource("SpriteFrames_2n73a")
+
+[node name="LifeBar" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(180, 45)
+scale = Vector2(0.331618, 0.331618)
+sprite_frames = SubResource("SpriteFrames_eld54")

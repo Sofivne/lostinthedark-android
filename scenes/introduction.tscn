@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=3 uid="uid://cdgsnefsnlflp"]
+
+[ext_resource type="Script" uid="uid://lnnws6yjh8g8" path="res://scripts/intro_animation.gd" id="1_tgans"]
+[ext_resource type="Texture2D" uid="uid://cgmlqw844n3h" path="res://assets/team_brand.png" id="2_e3kje"]
+
+[sub_resource type="Animation" id="Animation_qebxn"]
+resource_name = "Intro_Fade_In"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade Out:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kot8c"]
+resource_name = "Intro_Fade_Out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade Out:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.06667, 2.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_f37s4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade Out:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kot8c"]
+_data = {
+&"Intro_Fade_In": SubResource("Animation_qebxn"),
+&"Intro_Fade_Out": SubResource("Animation_kot8c"),
+&"RESET": SubResource("Animation_f37s4")
+}
+
+[node name="Introduction" type="Node2D"]
+script = ExtResource("1_tgans")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1.0
+offset_top = -14.0
+offset_right = 1151.0
+offset_bottom = 647.0
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(570, 325)
+scale = Vector2(1.067, 1.067)
+texture = ExtResource("2_e3kje")
+
+[node name="Fade Out" type="ColorRect" parent="."]
+offset_left = -1.0
+offset_top = -5.0
+offset_right = 1152.0
+offset_bottom = 652.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kot8c")
+}

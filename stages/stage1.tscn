@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cbkrwcgprril5"]
+[gd_scene load_steps=21 format=3 uid="uid://c7uogcgw5ewuu"]
 
 [ext_resource type="PackedScene" uid="uid://c2383u0jbk7y4" path="res://scenes/player.tscn" id="1_j8ehi"]
 [ext_resource type="AudioStream" uid="uid://blhno5ewwoubg" path="res://assets/sound/bg_grotte.wav" id="2_kvalj"]
@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://co8nywbihkb7l" path="res://assets/texture/2d_lights_and_shadows_neutral_point_light.webp" id="13_pcnnq"]
 [ext_resource type="AudioStream" uid="uid://hvemfff4rtym" path="res://assets/sound/sonar.WAV" id="14_owhib"]
 [ext_resource type="PackedScene" uid="uid://1rf2m6xmepd3" path="res://scenes/hud.tscn" id="15_6pksw"]
-[ext_resource type="PackedScene" uid="uid://2du1yjix3r2d" path="res://scenes/enemy.tscn" id="16_sckei"]
+[ext_resource type="PackedScene" uid="uid://bvkxhxnb6sb82" path="res://scenes/enemy.tscn" id="16_sckei"]
 
 [sub_resource type="GDScript" id="GDScript_qyhv6"]
 script/source = "extends Node

@@ -1,11 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://dau05a6j2ejib"]
 
-[ext_resource type="Script" uid="uid://igcbavnqvbs0" path="res://scripts/mini_game.gd" id="1_24tpl"]
+[ext_resource type="Script" path="res://scripts/mini_game.gd" id="1_24tpl"]
 [ext_resource type="Texture2D" uid="uid://c53y7eocle3i7" path="res://assets/sprites/interface/circle.png" id="1_womse"]
 [ext_resource type="Texture2D" uid="uid://bo2u7huhjx80d" path="res://assets/sprites/interface/indicator.png" id="2_cnb5l"]
 [ext_resource type="AudioStream" uid="uid://bru06xm0a2qf5" path="res://assets/sound/target_sound.WAV" id="4_6s36f"]
 [ext_resource type="AudioStream" uid="uid://bk1d55gv8wm4q" path="res://assets/sound/error_sound.WAV" id="5_ewwh8"]
-
 
 [sub_resource type="Animation" id="Animation_kp0o0"]
 length = 0.001

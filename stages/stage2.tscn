@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dp7kdrm2j6wxg"]
+[gd_scene load_steps=22 format=3 uid="uid://bj5shtmr35m3e"]
 
 [ext_resource type="Script" path="res://scripts/stage2.gd" id="1_00kmx"]
 [ext_resource type="Texture2D" uid="uid://cg2g0tw6yj3" path="res://assets/terrain/forest/env_ground.png" id="2_ltg0i"]
@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bmqnnxbgghts2" path="res://assets/terrain/forest/Moon_Phase_1.png" id="11_cl2n6"]
 [ext_resource type="Texture2D" uid="uid://co8nywbihkb7l" path="res://assets/texture/2d_lights_and_shadows_neutral_point_light.webp" id="12_dokw7"]
 [ext_resource type="Texture2D" uid="uid://cbrtbj3imnnue" path="res://assets/sprites/object/sign.png" id="13_hd1lh"]
-[ext_resource type="FontFile" uid="uid://ce0yr85hkdf32" path="res://assets/fonts/PeaberryBase.ttf" id="14_m1drc"]
+[ext_resource type="FontFile" uid="uid://ce0yr85hkdf32" path="res://assets/backgrounds/fonts/PeaberryBase.ttf" id="14_m1drc"]
 [ext_resource type="PackedScene" uid="uid://c2383u0jbk7y4" path="res://scenes/player.tscn" id="15_hrcfl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ahfb"]

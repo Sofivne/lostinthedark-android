@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://2du1yjix3r2d"]
+[gd_scene load_steps=26 format=3 uid="uid://bvkxhxnb6sb82"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_6v5ix"]
 [ext_resource type="Texture2D" uid="uid://8wxeqbgf63t2" path="res://assets/sprites/enemy/Canine_Black_Attack.png" id="2_mi105"]

@@ -33,8 +33,8 @@ func start_game() -> void:
 	get_tree().change_scene_to_file("res://stages/stage0.tscn")
 
 func load_game() -> void:
-	print("Load game functionality here")
-
+	SaveManager.load_game()
+	
 func open_settings() -> void:
 	print("Settings menu functionality here")
 

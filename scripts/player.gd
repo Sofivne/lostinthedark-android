@@ -9,6 +9,8 @@ enum MovementState {
 	FALLING,
 	DOUBLE_JUMP
 }
+var pause_menu_instance: Node = null
+const PauseMenuScene = preload("res://scenes/pause_menu.tscn")
 
 @export var speed: float = 90.0
 @export var jump_height: float = 65.0
@@ -32,12 +34,16 @@ var can_move: bool = false
 signal all_lamps_on
 
 func _ready():
+	if GameManager.pending_load_data.size() > 0:
+		var data = GameManager.pending_load_data
+		global_position = Vector2(data["position"]["x"], data["position"]["y"])
+		PlayerGlobalStates.health = data["health"]
+		GameManager.pending_load_data = {}
 	gravity = (2 * jump_height) / pow(time_jump_apex, 2)
 	jump_force = gravity * time_jump_apex
-
 	HudManager.set_label_visible($Label, false)
 	$Label.visible = false
-	
+	GameManager.player_ref = self
 	mini_game.connect("mini_game_success", Callable(self, "_on_mini_game_success"))
 	mini_game.connect("mini_game_failed", Callable(self, "_on_mini_game_failed")) 
 	print("Player ready")
@@ -68,7 +74,8 @@ func _on_label_timer_timeout():
 
 func _physics_process(delta: float):
 	velocity.y += gravity * delta
-
+	var pos = GameManager.get_player_position()
+	print("Position actuelle :", pos)
 	if can_move:
 		var was_moving = velocity.x != 0
 		if Input.is_action_just_pressed("ui_select"):
@@ -123,7 +130,31 @@ func _physics_process(delta: float):
 
 		else:
 			set_animation_state(MovementState.FALLING)
+			
+			
+
+			
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):  # touche Échap par défaut
+		if get_tree().paused:
+			resume_game()
+		else:
+			pause_game()
  
+		
+func pause_game():
+	get_tree().paused = true
+	pause_menu_instance = PauseMenuScene.instantiate()
+	pause_menu_instance.name = "PauseMenu"
+	get_tree().get_root().add_child(pause_menu_instance)
+
+func resume_game():
+	get_tree().paused = false
+	if pause_menu_instance and pause_menu_instance.is_inside_tree():
+		pause_menu_instance.queue_free()
+	pause_menu_instance = null
+
+
 func move_right():
 	velocity.x = speed
 	$animation.flip_h = false  

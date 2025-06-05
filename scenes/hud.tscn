@@ -144,6 +144,8 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(48, 48)
 scale = Vector2(2.85294, 2.85294)
 sprite_frames = SubResource("SpriteFrames_2n73a")
+frame = 2
+frame_progress = 0.519875
 
 [node name="LifeBar" type="AnimatedSprite2D" parent="."]
 visible = false

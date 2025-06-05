@@ -21,7 +21,7 @@ func set_current_hud(hud: Node):
 
 func update_health_value(new_health):
 	if current_hud:
-		var animated_sprite = current_hud.get_node_or_null("LifeBar")
+		var animated_sprite = current_hud.get_node_or_null("Heart")
 		if animated_sprite:
 			new_health = clamp(new_health, 0, 100)
 			print("NEW HEALTH DEBUG" ,new_health)
@@ -55,6 +55,7 @@ func show_all_labels():
 				node.visible = true
 			else:
 				print("Erreur : nœud introuvable :", element)
+
 
 func update_label(node_control: Label, current_value: float, total_value:float):
 	node_control.text = "%d/%d" % [current_value, total_value]

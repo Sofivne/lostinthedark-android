@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dau05a6j2ejib"]
 
-[ext_resource type="Script" path="res://scripts/mini_game.gd" id="1_24tpl"]
+[ext_resource type="Script" uid="uid://igcbavnqvbs0" path="res://scripts/mini_game.gd" id="1_24tpl"]
 [ext_resource type="Texture2D" uid="uid://c53y7eocle3i7" path="res://assets/sprites/interface/circle.png" id="1_womse"]
 [ext_resource type="Texture2D" uid="uid://bo2u7huhjx80d" path="res://assets/sprites/interface/indicator.png" id="2_cnb5l"]
 [ext_resource type="AudioStream" uid="uid://bru06xm0a2qf5" path="res://assets/sound/target_sound.WAV" id="4_6s36f"]
@@ -38,8 +38,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uqche"]
 _data = {
-"RESET": SubResource("Animation_kp0o0"),
-"error_animation": SubResource("Animation_qnr00")
+&"RESET": SubResource("Animation_kp0o0"),
+&"error_animation": SubResource("Animation_qnr00")
 }
 
 [node name="MiniGame" type="Control"]
@@ -74,5 +74,5 @@ stream = ExtResource("5_ewwh8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_uqche")
+&"": SubResource("AnimationLibrary_uqche")
 }

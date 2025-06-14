@@ -1,20 +1,19 @@
 extends Area2D
 
-@export var next_scene: String  # Le chemin de la prochaine scène à charger
+@export var next_scene: String  
 @onready var door_sound = $DoorSound
 @onready var interaction_label = $InteractionLabel
 @onready var interaction_button = $InteractionButton
 
 var all_lamps_on = false
-var player_nearby = false  # Variable pour suivre si le joueur est à proximité
+var player_nearby = false 
 
 func _ready():
 	connect("body_entered", Callable(self, "_on_body_entered"))
 	connect("body_exited", Callable(self, "_on_body_exited"))
-	interaction_label.visible = false  # Masquer le label au début
-	interaction_button.visible = false  # Masquer le bouton au début
+	interaction_label.visible = false
+	interaction_button.visible = false  
 
-	# Connecter le signal du joueur pour détecter quand toutes les lampes sont allumées
 	var player = get_node_or_null("/root/Stage1/player")
 	if player == null:
 		player = get_node_or_null("/root/world/player")
@@ -34,14 +33,14 @@ func enable_transition():
 func _on_body_entered(body):
 	if body is Player:
 		player_nearby = true
-		interaction_label.visible = true  # Afficher le label
-		interaction_button.visible = true  # Afficher le bouton
+		interaction_label.visible = true  
+		interaction_button.visible = true 
 
 func _on_body_exited(body):
 	if body is Player:
 		player_nearby = false
-		interaction_label.visible = false  # Masquer le label
-		interaction_button.visible = false  # Masquer le bouton
+		interaction_label.visible = false
+		interaction_button.visible = false
 
 func _process(delta):
 	if player_nearby and Input.is_action_just_pressed("interact"):

@@ -9,6 +9,7 @@ class_name Enemy
 @onready var animation: AnimatedSprite2D = $AnimatedSprite2D
 @onready var detection_area: Area2D = $DetectionArea
 @onready var attack_area: Area2D = $AttackArea
+@onready var raycast2D: RayCast2D = $RayCast2D
 
 var direction := -1
 var start_position: Vector2
@@ -36,6 +37,14 @@ func _physics_process(delta):
 	move_and_slide()
 
 func patrol():
+	raycast2D.position.x = 10 * direction
+	raycast2D.force_raycast_update()
+
+	if not raycast2D.is_colliding():
+		direction *= -1
+		update_sprite_orientation()
+		return
+
 	var distance = position.x - start_position.x
 	velocity.x = direction * speed
 
@@ -47,6 +56,7 @@ func patrol():
 	update_sprite_orientation()
 	animation.play("walk")
 
+
 func chase_player():
 	var player = get_closest_player()
 	if not player:
@@ -54,7 +64,7 @@ func chase_player():
 		return
 
 	var dx = player.global_position.x - global_position.x
-	if abs(dx) > 5:  # ignore si le joueur est trop centré
+	if abs(dx) > 5: 
 		direction = sign(dx)
 	update_sprite_orientation()
 
@@ -75,7 +85,6 @@ func attack():
 	can_attack = true
 
 func update_sprite_orientation():
-	# Si le sprite regarde à gauche par défaut
 	animation.flip_h = direction > 0
 
 

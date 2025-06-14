@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cdgsnefsnlflp"]
 
-[ext_resource type="Script" uid="uid://lnnws6yjh8g8" path="res://scripts/intro_animation.gd" id="1_tgans"]
+[ext_resource type="Script" path="res://scripts/intro_animation.gd" id="1_tgans"]
 [ext_resource type="Texture2D" uid="uid://cgmlqw844n3h" path="res://assets/team_brand.png" id="2_e3kje"]
 
 [sub_resource type="Animation" id="Animation_qebxn"]
@@ -52,9 +52,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kot8c"]
 _data = {
-&"Intro_Fade_In": SubResource("Animation_qebxn"),
-&"Intro_Fade_Out": SubResource("Animation_kot8c"),
-&"RESET": SubResource("Animation_f37s4")
+"Intro_Fade_In": SubResource("Animation_qebxn"),
+"Intro_Fade_Out": SubResource("Animation_kot8c"),
+"RESET": SubResource("Animation_f37s4")
 }
 
 [node name="Introduction" type="Node2D"]
@@ -81,5 +81,5 @@ color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_kot8c")
+"": SubResource("AnimationLibrary_kot8c")
 }

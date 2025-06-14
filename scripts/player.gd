@@ -135,7 +135,7 @@ func _physics_process(delta: float):
 
 			
 func _input(event):
-	if event.is_action_pressed("ui_cancel"):  # touche Échap par défaut
+	if event.is_action_pressed("ui_cancel"):
 		if get_tree().paused:
 			resume_game()
 		else:
@@ -201,8 +201,7 @@ func _on_mini_game_failed():
 	PlayerGlobalStates.reduce_health(10)
 	can_move = true
 	
-## As the following function is documented, even though its name starts with
-## an underscore, it will appear in the help window.
+
 func set_animation_state(state: MovementState):
 	match state:
 		MovementState.IDLE:

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dblttlia14xr8"]
 
-[ext_resource type="Script" uid="uid://vavkskrgs7s5" path="res://scripts/main_menu.gd" id="1_1ehe0"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_1ehe0"]
 [ext_resource type="Texture2D" uid="uid://l0kihfj7ofei" path="res://assets/backgrounds/bgc-main_menu.png" id="2_wu84c"]
 [ext_resource type="AudioStream" uid="uid://cdul84xnx73ud" path="res://assets/Audio/ZeroProject-WhisperingIceland.mp3" id="3_n45e2"]
 [ext_resource type="FontFile" uid="uid://yudbyrprur13" path="res://assets/Fonts/PeaberryBase.ttf" id="4_8ln24"]

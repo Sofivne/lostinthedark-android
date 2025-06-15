@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8ujvrknfbqgl"]
+[gd_scene load_steps=3 format=3 uid="uid://dp0l7klp2wva7"]
 
-[ext_resource type="Script" uid="uid://bv5qrmmabkf6d" path="res://scenes/pause_menu.gd" id="1_myx47"]
+[ext_resource type="Script" path="res://scenes/pause_menu.gd" id="1_myx47"]
 [ext_resource type="FontFile" uid="uid://yudbyrprur13" path="res://assets/Fonts/PeaberryBase.ttf" id="1_n87rw"]
 
 [node name="pause_menu" type="Control"]

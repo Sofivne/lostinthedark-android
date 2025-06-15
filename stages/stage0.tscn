@@ -1312,9 +1312,9 @@ offset_right = 633.0
 offset_bottom = 382.0
 scale = Vector2(0.5, 0.5)
 theme_override_fonts/font = ExtResource("13_qxb0c")
-text = "Turn the potentiometer 
-until you hear a sound, 
-then press the red button."
+text = "Scroll the mouse wheel
+until you hear a sound,
+ then press the red button."
 horizontal_alignment = 1
 vertical_alignment = 1
 

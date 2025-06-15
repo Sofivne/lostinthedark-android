@@ -11,6 +11,8 @@ enum MovementState {
 }
 var pause_menu_instance: Node = null
 const PauseMenuScene = preload("res://scenes/pause_menu.tscn")
+const GameOverScene = preload("res://scenes/game_over.tscn")
+
 
 @export var speed: float = 90.0
 @export var jump_height: float = 65.0
@@ -38,6 +40,7 @@ func _ready():
 		var data = GameManager.pending_load_data
 		global_position = Vector2(data["position"]["x"], data["position"]["y"])
 		PlayerGlobalStates.health = data["health"]
+		check_game_over()
 		GameManager.pending_load_data = {}
 	gravity = (2 * jump_height) / pow(time_jump_apex, 2)
 	jump_force = gravity * time_jump_apex
@@ -80,6 +83,7 @@ func _physics_process(delta: float):
 		var was_moving = velocity.x != 0
 		if Input.is_action_just_pressed("ui_select"):
 			PlayerGlobalStates.reduce_health(25)
+			check_game_over()
 		if Input.is_action_pressed("ui_left"):
 			move_left()
 		elif Input.is_action_pressed("ui_right"):
@@ -199,7 +203,17 @@ func _on_mini_game_success():
 func _on_mini_game_failed():
 	print("Mini-jeu échoué, réduction de santé.")
 	PlayerGlobalStates.reduce_health(10)
+	check_game_over()
 	can_move = true
+	
+func check_game_over():
+	if PlayerGlobalStates.health <= 0:
+		print("Game Over")
+		get_tree().paused = true
+		var game_over_instance = GameOverScene.instantiate()
+		game_over_instance.name = "GameOver"
+		get_tree().get_root().add_child(game_over_instance)
+
 	
 
 func set_animation_state(state: MovementState):

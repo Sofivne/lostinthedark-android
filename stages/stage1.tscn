@@ -1137,7 +1137,7 @@ position = Vector2(-0.611298, 0)
 color = Color(0, 0, 0, 1)
 
 [node name="Lamp" parent="." groups=["lamps"] instance=ExtResource("9_4thtu")]
-position = Vector2(-33.0098, 19.3333)
+position = Vector2(-1.22258, -1.90735e-06)
 
 [node name="Lamp2" parent="." groups=["lamps"] instance=ExtResource("9_4thtu")]
 position = Vector2(-152.212, -288)

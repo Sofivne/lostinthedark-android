@@ -1305,7 +1305,7 @@ position = Vector2(546.25, 343.25)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("17_ea57u")
 
-[node name="potentiometer" type="Label" parent="UI/Labels"]
+[node name="wheel" type="Label" parent="UI/Labels"]
 offset_left = 407.0
 offset_top = 328.0
 offset_right = 633.0
